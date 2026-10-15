@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://akash-ux.design/sitemap.xml

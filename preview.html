@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akash G | UI/UX Designer & Product Designer Portfolio</title>
+  <meta name="description" content="Portfolio of Akash G - UI/UX Designer specializing in user research, wireframing, high-fidelity Figma prototypes, and human-centered design systems. Based in Chennai, India." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#7C3AED',
+              50: '#F5F3FF',
+              100: '#EDE9FE',
+              200: '#DDD6FE',
+              300: '#C4B5FD',
+              400: '#A78BFA',
+              500: '#8B5CF6',
+              600: '#7C3AED',
+              700: '#6D28D9',
+            },
+            secondary: {
+              DEFAULT: '#A855F7',
+              400: '#C084FC',
+              500: '#A855F7',
+            },
+            accent: {
+              DEFAULT: '#EC4899',
+              400: '#F472B6',
+              500: '#EC4899',
+            }
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #0B0F19;
+      color: #F8FAFC;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .glass-card {
+      background: rgba(19, 27, 46, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+  </style>
+</head>
+<body class="selection:bg-purple-600 selection:text-white antialiased overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav py-3.5 shadow-lg shadow-black/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 p-[2px]">
+          <div class="w-full h-full bg-[#0B0F19] rounded-[10px] flex items-center justify-center font-heading font-bold text-white text-lg">
+            AG
+          </div>
+        </div>
+        <div>
+          <span class="font-heading font-bold text-white block text-base leading-tight">AKASH G</span>
+          <span class="text-xs text-purple-400 font-medium flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            UI/UX Designer
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1 bg-[#131B2E]/80 border border-white/5 rounded-full px-4 py-1.5">
+        <a href="#about" class="px-3.5 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full">About</a>
+        <a href="#projects" class="px-3.5 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full">Projects</a>
+        <button onclick="openCaseStudyModal()" class="px-3.5 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full">Case Study</button>
+        <a href="#interactive-demo" class="px-3.5 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full">Live Prototype</a>
+        <a href="#skills" class="px-3.5 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full">Skills</a>
+        <a href="#process" class="px-3.5 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full">Process</a>
+        <a href="#experience" class="px-3.5 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full">Experience</a>
+        <a href="#contact" class="px-3.5 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="openResumeModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10">
+          <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
+          <span>Resume</span>
+        </button>
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 shadow-md shadow-purple-600/30">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Hire Me</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
+    <div class="absolute top-1/4 -left-48 w-96 h-96 bg-purple-600/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 -right-48 w-96 h-96 bg-pink-500/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-purple-950/60 border border-purple-500/30">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-purple-200">
+              Open to UI/UX & Product Design Opportunities
+            </span>
+          </div>
+
+          <div class="space-y-2">
+            <p className="text-sm font-medium text-slate-400">
+              Hello, I am <strong class="text-white">AKASH G</strong> • Tharamani, Chennai
+            </p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white leading-[1.12]">
+              Designing products users <br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-300">
+                love to use.
+              </span>
+            </h1>
+          </div>
+
+          <div class="h-10 flex items-center justify-center lg:justify-start">
+            <span class="text-xl sm:text-2xl font-heading font-semibold text-purple-300">
+              UI/UX Designer • Product Designer • Figma Specialist
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Creative and user-focused fresher with a strong foundation in user-centered design, wireframing, and prototyping. Skilled in conducting user research, building design systems, and creating high-fidelity interactive prototypes using Figma and Adobe XD.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <button onclick="openCaseStudyModal()" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 shadow-lg shadow-purple-600/30">
+              <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+              <span>Vehicle Repair Case Study</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+
+            <a href="#interactive-demo" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10">
+              <i data-lucide="smartphone" class="w-4 h-4 text-purple-400"></i>
+              <span>Test Live Mobile Prototype</span>
+            </a>
+
+            <button onclick="openResumeModal()" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-slate-300 hover:text-white bg-slate-900/60 border border-slate-700/60">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>Download Resume</span>
+            </button>
+          </div>
+
+          <!-- Badges -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-400">
+            <a href="https://linkedin.com/in/akash-g-90039ak" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-slate-300 hover:text-white">
+              <i data-lucide="linkedin" class="w-3.5 h-3.5 text-blue-400"></i>
+              <span>LinkedIn Profile</span>
+            </a>
+            <a href="mailto:ak.akash1071@gmail.com" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-slate-300 hover:text-white">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span>ak.akash1071@gmail.com</span>
+            </a>
+            <a href="tel:+919003973056" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-slate-300 hover:text-white">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i>
+              <span>+91-9003973056</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-md rounded-3xl p-[2px] bg-gradient-to-b from-purple-500/60 via-pink-500/30 to-purple-800/40 shadow-2xl">
+            <div class="rounded-[22px] bg-[#111827] p-7 space-y-5">
+              
+              <div class="flex items-center gap-4 pb-4 border-b border-white/10">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 p-[2px]">
+                  <div class="w-full h-full rounded-[14px] bg-[#0E1626] flex items-center justify-center font-heading font-bold text-white text-xl">
+                    AG
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-lg text-white">AKASH G</h3>
+                  <p class="text-xs text-purple-300 font-medium">UI/UX Designer (Fresher)</p>
+                  <p class="text-[11px] text-slate-400">BCA • St. Peter's Institute</p>
+                </div>
+              </div>
+
+              <div class="rounded-2xl bg-[#1A2234] border border-white/10 p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-semibold uppercase tracking-wider text-purple-400">
+                    Flagship Project
+                  </span>
+                  <span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-medium">
+                    Mobile App
+                  </span>
+                </div>
+                <h4 class="font-heading font-bold text-white text-base">Vehicle Repair Assistant (FixGo)</h4>
+                <p class="text-xs text-slate-300">
+                  On-demand bike breakdown SOS with live GPS mechanic routing, verified technician badges, and transparent pricing.
+                </p>
+                <div class="grid grid-cols-3 gap-2 pt-1 text-center">
+                  <div class="bg-slate-900/60 rounded-xl p-2 border border-white/5">
+                    <span class="block text-xs font-bold text-white">&lt; 40s</span>
+                    <span class="text-[9px] text-slate-400">SOS Booking</span>
+                  </div>
+                  <div class="bg-slate-900/60 rounded-xl p-2 border border-white/5">
+                    <span class="block text-xs font-bold text-emerald-400">92%</span>
+                    <span class="text-[9px] text-slate-400">Task Success</span>
+                  </div>
+                  <div class="bg-slate-900/60 rounded-xl p-2 border border-white/5">
+                    <span class="block text-xs font-bold text-purple-300">10+</span>
+                    <span class="text-[9px] text-slate-400">User Tests</span>
+                  </div>
+                </div>
+                <button onclick="openCaseStudyModal()" class="w-full mt-2 py-2 px-3 rounded-xl bg-purple-600/30 hover:bg-purple-600/40 text-purple-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors">
+                  <span>Read Complete Case Study</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
+
+              <div class="space-y-2">
+                <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Core Skills & Tools</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Figma</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Adobe XD</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Design Systems</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">UX Research</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">Wireframing</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300">WCAG Accessibility</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold uppercase tracking-wider text-purple-300">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          About Akash G
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight">
+          Turning user pain into <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">seamless experiences.</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          A fresher UI/UX Designer combining structured design thinking with a technical mindset to craft intuitive, accessible, and high-impact digital products.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="glass-card rounded-3xl p-8 space-y-6">
+            <h3 class="font-heading font-bold text-2xl text-white">Design Philosophy & Career Objective</h3>
+            <blockquote class="border-l-4 border-purple-500 pl-4 py-1 italic text-slate-200 text-lg">
+              "Good design is invisible—it removes friction, builds instant trust, and empowers users without demanding cognitive strain."
+            </blockquote>
+            <p class="text-slate-300 leading-relaxed text-base">
+              I am a user-focused designer pursuing my Bachelor of Computer Application (BCA) at St. Peter's Institute of Higher Education and Research in Chennai. My journey in product design is rooted in the conviction that digital tools should relieve anxiety rather than create it.
+            </p>
+            <p class="text-slate-300 leading-relaxed text-base">
+              During my UI/UX Design internship at <strong class="text-white">Login 360</strong>, I worked directly with product managers and engineers to define user flows, design high-fidelity components, and run usability tests with 10+ real users. Complementing this, my technical internship in Python programming at <strong class="text-white">Codsoft</strong> gave me an understanding of code constraints, state logic, and engineering handoffs.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card rounded-2xl p-5 text-center">
+              <span class="block font-heading font-extrabold text-3xl text-purple-400">2+</span>
+              <span class="text-xs font-medium text-slate-400 mt-1 block">Design Internships</span>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center">
+              <span class="block font-heading font-extrabold text-3xl text-purple-400">10+ Users</span>
+              <span class="text-xs font-medium text-slate-400 mt-1 block">Usability Tests Run</span>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center">
+              <span class="block font-heading font-extrabold text-3xl text-purple-400">Finalist</span>
+              <span class="text-xs font-medium text-slate-400 mt-1 block">Design Hackathon</span>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center">
+              <span class="block font-heading font-extrabold text-3xl text-purple-400">40+ Views</span>
+              <span class="text-xs font-medium text-slate-400 mt-1 block">Case Study Screens</span>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-3xl p-6 border border-white/5 space-y-4">
+            <h4 class="font-heading font-bold text-white text-base">Academic Background</h4>
+            <div class="space-y-3 pt-2 text-sm border-t border-white/5">
+              <div>
+                <span class="font-semibold text-slate-200 block">Bachelor of Computer Application (BCA)</span>
+                <span class="text-xs text-purple-300">St. Peter's Institute of Higher Education and Research (2023 – 2026)</span>
+                <span class="text-xs text-slate-400 block mt-0.5">CGPA: 6.7 / 10 • Chennai</span>
+              </div>
+              <div class="pt-2">
+                <span class="font-semibold text-slate-200 block">Higher Secondary Certificate (12th Grade)</span>
+                <span class="text-xs text-slate-400">Rural Institute of Open Schooling (May 2023) • 62.5%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PHONE PROTOTYPE -->
+  <section id="interactive-demo" class="py-20 relative overflow-hidden bg-[#0D121F]/80 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold uppercase tracking-wider text-purple-300">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          Interactive UX Prototype
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight">
+          Test the <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-300">Vehicle Repair Assistant</span> in Real Time
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Click directly on the buttons inside the mobile simulator to test the emergency roadside dispatch flow!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-5xl mx-auto">
+        <div class="lg:col-span-6 space-y-4">
+          <h3 class="font-heading font-bold text-2xl text-white">Solving Roadside Panic with a 2-Tap Dispatch</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Traditional breakdown assistance requires frantic phone calls and unpredictable pricing. FixGo replaces that with instant GPS discovery, upfront repair ranges, and live tracking.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <button onclick="setSimScreen(1)" id="sim-btn-1" class="w-full text-left p-4 rounded-2xl border border-purple-500/50 bg-purple-950/40 flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-lg bg-purple-500 text-white flex items-center justify-center text-xs font-bold shrink-0">01</div>
+              <div>
+                <h4 class="text-sm font-semibold text-white">Step 1: Emergency SOS Trigger</h4>
+                <p class="text-xs text-slate-400 mt-0.5">One-touch trigger detecting GPS coordinates automatically without confusing menus.</p>
+              </div>
+            </button>
+
+            <button onclick="setSimScreen(2)" id="sim-btn-2" class="w-full text-left p-4 rounded-2xl border border-white/5 bg-white/[0.02] flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-lg bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-bold shrink-0">02</div>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-300">Step 2: Transparent Cost Estimation</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Select the breakdown symptom to view verified parts + labor estimate upfront.</p>
+              </div>
+            </button>
+
+            <button onclick="setSimScreen(3)" id="sim-btn-3" class="w-full text-left p-4 rounded-2xl border border-white/5 bg-white/[0.02] flex items-start gap-3.5">
+              <div class="w-7 h-7 rounded-lg bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-bold shrink-0">03</div>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-300">Step 3: Live Mechanic Routing & Verification</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Live ETA, mechanic background rating, vehicle details, and direct contact.</p>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Phone Device Frame -->
+        <div class="lg:col-span-6 flex justify-center">
+          <div class="relative w-[320px] sm:w-[340px] h-[640px] bg-slate-950 rounded-[48px] p-3 shadow-2xl border-[4px] border-slate-700">
+            <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-30"></div>
+            
+            <div class="w-full h-full bg-[#0F172A] rounded-[38px] overflow-hidden flex flex-col relative text-white">
+              
+              <!-- Status bar -->
+              <div class="pt-3 px-6 pb-2 flex items-center justify-between text-[11px] text-slate-300 font-medium z-20">
+                <span>9:41</span>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[10px]">5G</span>
+                  <div class="w-5 h-2.5 border border-slate-300 rounded-sm p-[1px] flex items-center">
+                    <div class="w-full h-full bg-white rounded-2xs"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCREEN 1 -->
+              <div id="screen-1" class="flex-1 flex flex-col justify-between p-4 relative">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between bg-slate-900/80 p-2.5 rounded-2xl border border-white/10">
+                    <div class="flex items-center gap-2">
+                      <div class="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center font-bold text-xs">Fix</div>
+                      <div>
+                        <span class="text-xs font-bold block leading-none">FixGo Roadside</span>
+                        <span class="text-[10px] text-emerald-400">GPS Active • Tharamani</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Simulated Map graphic -->
+                <div class="my-auto py-6 text-center space-y-2">
+                  <div class="w-16 h-16 rounded-full bg-purple-600/20 border-2 border-purple-500 flex items-center justify-center mx-auto animate-pulse">
+                    <i data-lucide="map-pin" class="w-8 h-8 text-purple-400"></i>
+                  </div>
+                  <span class="text-xs font-bold text-white block">Tharamani, Chennai</span>
+                  <span class="text-[11px] text-slate-400 block">3 Mechanics within 3 km</span>
+                </div>
+
+                <div class="space-y-3 bg-[#162032] p-4 rounded-3xl border border-white/10">
+                  <button onclick="setSimScreen(2)" class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-pink-600 font-bold text-xs sm:text-sm text-white flex items-center justify-center gap-2 shadow-lg animate-pulse">
+                    <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                    <span>EMERGENCY BREAKDOWN SOS</span>
+                  </button>
+                  <span class="text-[10px] text-slate-400 block text-center">Tap to auto-dispatch nearest certified mechanic</span>
+                </div>
+              </div>
+
+              <!-- SCREEN 2 -->
+              <div id="screen-2" class="hidden flex-1 flex flex-col justify-between p-4 relative bg-[#111827]">
+                <div class="space-y-1">
+                  <button onclick="setSimScreen(1)" class="text-xs text-slate-400 hover:text-white">← Back</button>
+                  <h4 class="font-heading font-bold text-base text-white">Select Breakdown Issue</h4>
+                  <p class="text-[11px] text-slate-400">Transparent parts & labor estimates.</p>
+                </div>
+
+                <div class="space-y-2 my-auto">
+                  <div onclick="setSimScreen(3)" class="p-3 rounded-2xl border border-purple-500 bg-purple-950/60 cursor-pointer flex items-center justify-between">
+                    <div>
+                      <span class="text-xs font-semibold block text-white">Flat Tire / Puncture</span>
+                      <span class="text-[10px] text-slate-400">Est. Arrival: 10 mins</span>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-400">$25 - $35</span>
+                  </div>
+                  <div onclick="setSimScreen(3)" class="p-3 rounded-2xl border border-white/5 bg-slate-900/50 cursor-pointer flex items-center justify-between">
+                    <div>
+                      <span class="text-xs font-semibold block text-white">Battery Dead / No Start</span>
+                      <span class="text-[10px] text-slate-400">Est. Arrival: 15 mins</span>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-400">$30 - $45</span>
+                  </div>
+                  <div onclick="setSimScreen(3)" class="p-3 rounded-2xl border border-white/5 bg-slate-900/50 cursor-pointer flex items-center justify-between">
+                    <div>
+                      <span class="text-xs font-semibold block text-white">Chain Break / Brake Lock</span>
+                      <span class="text-[10px] text-slate-400">Est. Arrival: 20 mins</span>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-400">$40 - $60</span>
+                  </div>
+                </div>
+
+                <div class="space-y-3 bg-[#182338] p-3.5 rounded-2xl border border-white/10">
+                  <button onclick="setSimScreen(3)" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 font-bold text-xs text-white flex items-center justify-center gap-2">
+                    <span>Dispatch Verified Mechanic</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- SCREEN 3 -->
+              <div id="screen-3" class="hidden flex-1 flex flex-col justify-between p-4 relative bg-[#111827]">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-emerald-400 uppercase">Mechanic Dispatched</span>
+                    <span class="text-xs font-bold text-white bg-slate-800 px-2 py-0.5 rounded-full">ETA: 7 Mins</span>
+                  </div>
+                  <h4 class="font-heading font-bold text-base text-white">Help is on the way!</h4>
+                </div>
+
+                <div class="h-36 rounded-2xl bg-[#162136] border border-white/10 flex items-center justify-center text-center">
+                  <div>
+                    <div class="w-9 h-9 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-1 animate-bounce">
+                      <i data-lucide="navigation" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span class="text-xs font-bold text-white">Ramesh is 1.1 km away</span>
+                    <span class="text-[10px] text-slate-400 block">Arriving via Bajaj Pulsar</span>
+                  </div>
+                </div>
+
+                <div class="bg-[#182338] p-3.5 rounded-2xl border border-white/10 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-10 h-10 rounded-xl bg-purple-900 border border-purple-500 flex items-center justify-center font-bold text-xs text-white">
+                        RK
+                      </div>
+                      <div>
+                        <span class="text-xs font-bold text-white block">Ramesh Kumar (Verified)</span>
+                        <span class="text-[10px] text-slate-400">Bike Specialist • 4.9 ★</span>
+                      </div>
+                    </div>
+                    <a href="tel:+919003973056" class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white">
+                      <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                    </a>
+                  </div>
+                  <button onclick="setSimScreen(1)" class="w-full py-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium flex items-center justify-center gap-1.5">
+                    <i data-lucide="refresh-cw" class="w-3 h-3 text-purple-400"></i>
+                    <span>Reset Prototype Demo</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Home indicator -->
+              <div class="pb-2 pt-1 flex justify-center">
+                <div class="w-24 h-1 bg-slate-600 rounded-full"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold uppercase tracking-wider text-purple-300">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            Featured Design Works
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight">
+            Selected UI/UX <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Projects & Case Studies</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Showcasing human-centered problem solving, rigorous Figma prototyping, usability testing, and design system governance.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Flagship Project Card -->
+        <div class="lg:col-span-12 glass-card rounded-3xl overflow-hidden border border-white/10 p-8 sm:p-10 space-y-6">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-semibold">
+              Flagship Case Study
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-slate-400 border border-white/5 text-xs font-medium">
+              Mobile UX/UI
+            </span>
+          </div>
+
+          <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white">
+            Vehicle Repair Assistant (FixGo)
+          </h3>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+            Designed a user-friendly mobile application for on-demand bike repair assistance. Conducted user research to identify riders' pain points and emergency roadside needs. Created user personas, empathy maps, user flows, and wireframes to improve user experience. Focused on quick service booking, mechanic verification, live tracking, and transparent repair cost estimates.
+          </p>
+
+          <div class="grid grid-cols-3 gap-4 max-w-lg">
+            <div class="bg-slate-900/60 rounded-2xl p-3 border border-white/5 text-center">
+              <span class="block font-heading font-bold text-base sm:text-lg text-purple-300">&lt; 40s</span>
+              <span class="text-[11px] text-slate-400">Emergency Booking</span>
+            </div>
+            <div class="bg-slate-900/60 rounded-2xl p-3 border border-white/5 text-center">
+              <span class="block font-heading font-bold text-base sm:text-lg text-emerald-400">92%</span>
+              <span class="text-[11px] text-slate-400">Task Success Rate</span>
+            </div>
+            <div class="bg-slate-900/60 rounded-2xl p-3 border border-white/5 text-center">
+              <span class="block font-heading font-bold text-base sm:text-lg text-pink-300">4.8 / 5</span>
+              <span class="text-[11px] text-slate-400">User Satisfaction</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="openCaseStudyModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 font-semibold text-white text-sm shadow-md">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>View Comprehensive Case Study</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <a href="#interactive-demo" class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 text-sm font-medium">
+              <i data-lucide="smartphone" class="w-4 h-4 text-purple-400"></i>
+              <span>Test Interactive Prototype</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: Login 360 Feature Module -->
+        <div class="lg:col-span-6 glass-card rounded-3xl p-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-full bg-white/5 text-slate-400 text-xs font-medium">Design System & Module</span>
+            <span class="text-xs font-semibold text-purple-400">Login 360 Intern</span>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white">Feature Module & UI System</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Collaborated with product managers and developers to design user flows for a new feature module. Created wireframes and high-fidelity mockups in Figma, maintaining consistency with the existing design system. Conducted usability testing with 10+ users and incorporated feedback into final designs.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-1.5 text-xs text-slate-300">
+            <span class="px-2 py-0.5 rounded-lg bg-white/5 border border-white/5">Figma</span>
+            <span class="px-2 py-0.5 rounded-lg bg-white/5 border border-white/5">Usability Testing (10+ Users)</span>
+            <span class="px-2 py-0.5 rounded-lg bg-white/5 border border-white/5">Design Systems</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Hackathon Finalist Concept -->
+        <div class="lg:col-span-6 glass-card rounded-3xl p-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-full bg-white/5 text-slate-400 text-xs font-medium">Academic UX</span>
+            <span class="text-xs font-semibold text-emerald-400">Hackathon Finalist 2025</span>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white">Hackathon Concept: Civic Pulse</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Finalist in College-Level UI/UX Design Hackathon 2025. Created an empathetic mobile interface for civic issue reporting with visual category tagging and status updates within an intensive 24-hour sprint.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-1.5 text-xs text-slate-300">
+            <span class="px-2 py-0.5 rounded-lg bg-white/5 border border-white/5">Rapid Prototyping</span>
+            <span class="px-2 py-0.5 rounded-lg bg-white/5 border border-white/5">Figma</span>
+            <span class="px-2 py-0.5 rounded-lg bg-white/5 border border-white/5">Design Thinking</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="py-24 relative overflow-hidden bg-[#0A0E18]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold uppercase tracking-wider text-purple-300">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          Technical & Design Competencies
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight">
+          Core Skills & <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Toolstack</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div class="glass-card rounded-2xl p-6 space-y-3">
+          <h4 class="font-heading font-bold text-lg text-white">Design Tools</h4>
+          <ul class="text-xs space-y-2 text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Figma (Auto-layout, Components)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Adobe XD (Interactive flows)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Adobe Photoshop</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Adobe Illustrator</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Sketch (basic)</li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 space-y-3">
+          <h4 class="font-heading font-bold text-lg text-white">Wireframing & Prototyping</h4>
+          <ul class="text-xs space-y-2 text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Low-Fidelity Wireframes</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> High-Fidelity Mockups</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Interactive Clickable Prototypes</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Design Systems & Component Tokens</li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 space-y-3">
+          <h4 class="font-heading font-bold text-lg text-white">UX Research</h4>
+          <ul class="text-xs space-y-2 text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> User Interviews & Surveys</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> User Personas & Empathy Maps</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> User Journey Mapping</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Usability Testing (10+ Users)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Card Sorting</li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 space-y-3">
+          <h4 class="font-heading font-bold text-lg text-white">Concepts & Code</h4>
+          <ul class="text-xs space-y-2 text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Design Thinking Process</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Information Architecture</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Accessibility (WCAG basics)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Responsive Mobile-First Design</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Python (Codsoft Intern) / HTML / CSS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION -->
+  <section id="experience" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Experience -->
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold uppercase tracking-wider text-purple-300">
+            Work Experience
+          </div>
+          <h3 class="text-2xl font-heading font-bold text-white">Internships</h3>
+
+          <div class="space-y-4">
+            <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-heading font-bold text-white text-base">UI/UX Design Intern</span>
+                <span class="text-xs text-purple-300 font-semibold">July 2026 – Oct 2026</span>
+              </div>
+              <span class="text-xs font-semibold text-slate-400 block">Login 360, Chennai</span>
+              <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                <li>Collaborated with product managers and developers to design user flows for a new feature module.</li>
+                <li>Created wireframes and high-fidelity mockups in Figma, maintaining consistency with the existing design system.</li>
+                <li>Conducted usability testing with 10+ users and incorporated feedback into final designs.</li>
+              </ul>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-heading font-bold text-white text-base">Python Programming Intern</span>
+                <span class="text-xs text-purple-300 font-semibold">Oct 2025 – Nov 2025</span>
+              </div>
+              <span class="text-xs font-semibold text-slate-400 block">Codsoft, Chennai</span>
+              <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                <li>Completed practical Python programming assignments as part of an internship program.</li>
+                <li>Applied programming fundamentals, conditional statements, loops, functions, and problem-solving techniques.</li>
+                <li>Developed and tested Python-based solutions for assigned tasks, improving debugging and logical thinking skills.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education & Certifications -->
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold uppercase tracking-wider text-purple-300">
+            Academic & Certifications
+          </div>
+          <h3 class="text-2xl font-heading font-bold text-white">Education & Credentials</h3>
+
+          <div class="space-y-4">
+            <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-heading font-bold text-white text-base">Bachelor of Computer Application (BCA)</span>
+                <span class="text-xs text-purple-300 font-semibold">Aug 2023 – May 2026</span>
+              </div>
+              <p class="text-xs text-slate-300">St. Peter's Institute of Higher Education and Research</p>
+              <span class="text-xs font-bold text-emerald-400 block">CGPA: 6.7 / 10</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-heading font-bold text-white text-base">Higher Secondary Certificate (12th Grade)</span>
+                <span class="text-xs text-purple-300 font-semibold">May 2023</span>
+              </div>
+              <p class="text-xs text-slate-300">Rural Institute of Open Schooling</p>
+              <span class="text-xs font-bold text-emerald-400 block">Percentage: 62.5%</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-2">
+              <h4 class="font-heading font-bold text-sm text-white uppercase tracking-wider">Certifications & Honors</h4>
+              <ul class="text-xs text-slate-300 space-y-1">
+                <li>• UI/UX Course — Login 360, Chennai</li>
+                <li>• UI/UX Design Specialization — Coursera</li>
+                <li>• Finalist, College-Level UI/UX Design Hackathon, 2025</li>
+                <li>• Active Member, College Design/HCI Club</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-24 relative overflow-hidden bg-[#0A0E18]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight">
+          Ready to Build Something <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Extraordinary?</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Open to UI/UX Designer, Product Designer, and Visual Design roles. Reach out directly:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
+        <a href="mailto:ak.akash1071@gmail.com" class="glass-card rounded-2xl p-6 border border-white/10 hover:border-purple-500/40 transition-colors">
+          <i data-lucide="mail" class="w-8 h-8 text-emerald-400 mx-auto mb-3"></i>
+          <span class="text-xs text-slate-400 block">Direct Email</span>
+          <span class="text-sm font-bold text-white">ak.akash1071@gmail.com</span>
+        </a>
+
+        <a href="tel:+919003973056" class="glass-card rounded-2xl p-6 border border-white/10 hover:border-purple-500/40 transition-colors">
+          <i data-lucide="phone" class="w-8 h-8 text-amber-400 mx-auto mb-3"></i>
+          <span class="text-xs text-slate-400 block">Phone / WhatsApp</span>
+          <span class="text-sm font-bold text-white">+91-9003973056</span>
+        </a>
+
+        <a href="https://linkedin.com/in/akash-g-90039ak" target="_blank" class="glass-card rounded-2xl p-6 border border-white/10 hover:border-purple-500/40 transition-colors">
+          <i data-lucide="linkedin" class="w-8 h-8 text-blue-400 mx-auto mb-3"></i>
+          <span class="text-xs text-slate-400 block">LinkedIn Profile</span>
+          <span class="text-sm font-bold text-white">akash-g-90039ak</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#080C14] border-t border-white/5 py-8 text-center text-xs text-slate-500">
+    <p>© 2026 AKASH G • UI/UX Designer • Crafted with user empathy and precision.</p>
+  </footer>
+
+  <!-- CASE STUDY MODAL -->
+  <div id="case-study-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl bg-[#0F172A] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div>
+          <span class="text-xs text-purple-300 font-semibold">Flagship Academic UI/UX Case Study</span>
+          <h2 class="text-2xl font-heading font-bold text-white">Vehicle Repair Assistant (FixGo)</h2>
+        </div>
+        <button onclick="closeCaseStudyModal()" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center">✕</button>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+        <h4 class="font-bold text-white text-base">Project Background & User Problem</h4>
+        <p>Motorcycle and scooter riders frequently face sudden mechanical breakdowns, flat tires, and stalls in unfamiliar areas or late at night. 78% of interviewed riders reported fear of unfair pricing, and 64% struggled to explain their exact breakdown coordinates over the phone.</p>
+
+        <h4 class="font-bold text-white text-base">Design Solution</h4>
+        <p>Designed an intuitive 2-tap mobile SOS roadside assistance app in Figma featuring GPS auto-detect, verified mechanic profiles with background checks, live route tracking, and transparent upfront cost calculators for parts and labor.</p>
+
+        <h4 class="font-bold text-white text-base">Usability Testing & Outcomes</h4>
+        <p>Tested prototypes with 12 daily commuters: Reduced average emergency booking time from 2m 14s to 38 seconds, achieved a 92% task completion success rate, and earned a 4.8 / 5.0 user trust and safety rating.</p>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+        <button onclick="closeCaseStudyModal()" class="px-4 py-2 rounded-xl bg-white/10 text-white text-xs">Close</button>
+        <a href="#interactive-demo" onclick="closeCaseStudyModal()" class="px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-bold">Try Interactive Phone Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME MODAL -->
+  <div id="resume-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative w-full max-w-3xl bg-white text-slate-900 rounded-3xl p-8 max-h-[90vh] overflow-y-auto space-y-4 text-xs sm:text-sm">
+      <div class="flex justify-between items-center border-b pb-3">
+        <span class="font-bold text-purple-700 uppercase">AKASH G — Official Resume</span>
+        <div class="flex gap-2">
+          <button onclick="window.print()" class="px-3 py-1 bg-purple-600 text-white rounded-lg text-xs font-semibold">Print / Save PDF</button>
+          <button onclick="closeResumeModal()" class="w-6 h-6 rounded-full bg-slate-200 text-slate-900 flex items-center justify-center">✕</button>
+        </div>
+      </div>
+
+      <div class="text-center space-y-1">
+        <h1 class="text-2xl font-bold uppercase">AKASH G</h1>
+        <p class="font-bold text-purple-700">UI/UX Designer</p>
+        <p class="text-xs text-slate-600">Tharamani, Chennai | +91-9003973056 | ak.akash1071@gmail.com | linkedin.com/in/akash-g-90039ak</p>
+      </div>
+
+      <div class="space-y-1 pt-2 border-t">
+        <h3 class="font-bold text-xs uppercase text-slate-900">Professional Summary</h3>
+        <p class="text-slate-700 text-xs">Creative and user-focused fresher with a strong foundation in user-centered design, wireframing, and prototyping. Skilled in conducting user research, building design systems, and creating high-fidelity interactive prototypes using Figma and Adobe XD. Passionate about solving real user problems through intuitive, accessible, and visually engaging interfaces.</p>
+      </div>
+
+      <div class="space-y-1 pt-2 border-t">
+        <h3 class="font-bold text-xs uppercase text-slate-900">Technical Skills</h3>
+        <p class="text-slate-700 text-xs"><strong>Design Tools:</strong> Figma, Adobe XD, Sketch (basic), Adobe Photoshop, Adobe Illustrator<br/>
+        <strong>Prototyping & Wireframing:</strong> Low & High-Fidelity Wireframes, Interactive Prototypes, Design Systems<br/>
+        <strong>UX Research:</strong> User Interviews, Surveys, Personas, User Journey Mapping, Usability Testing, Card Sorting<br/>
+        <strong>Concepts:</strong> Design Thinking, Information Architecture, Accessibility (WCAG basics), Responsive Design</p>
+      </div>
+
+      <div class="space-y-1 pt-2 border-t">
+        <h3 class="font-bold text-xs uppercase text-slate-900">Academic Project: Vehicle Repair Assistant</h3>
+        <p class="text-slate-700 text-xs">• Designed a user-friendly mobile application for on-demand bike repair assistance.<br/>
+        • Conducted user research to identify riders' pain points and emergency roadside needs.<br/>
+        • Created user personas, empathy maps, user flows, and wireframes to improve user experience.<br/>
+        • Designed an intuitive interface for finding nearby mechanics using GPS-based location services.<br/>
+        • Focused on quick service booking, mechanic verification, live tracking, and transparent repair cost estimates.</p>
+      </div>
+
+      <div class="space-y-1 pt-2 border-t">
+        <h3 class="font-bold text-xs uppercase text-slate-900">Internship Experience</h3>
+        <p class="text-slate-700 text-xs"><strong>UI/UX Design Intern | Login 360, Chennai (July 2026 – Oct 2026)</strong><br/>
+        • Collaborated with product managers and developers to design user flows for a new feature module.<br/>
+        • Created wireframes and high-fidelity mockups in Figma, maintaining consistency with existing design system.<br/>
+        • Conducted usability testing with 10+ users and incorporated feedback into final designs.</p>
+        <p class="text-slate-700 text-xs pt-1"><strong>Python Programming Intern | Codsoft, Chennai (Oct 2025 – Nov 2025)</strong><br/>
+        • Completed practical Python programming assignments as part of an internship program.<br/>
+        • Applied programming fundamentals, conditional statements, loops, functions, and problem-solving techniques.</p>
+      </div>
+
+      <div class="space-y-1 pt-2 border-t">
+        <h3 class="font-bold text-xs uppercase text-slate-900">Education</h3>
+        <p class="text-slate-700 text-xs"><strong>Bachelor of Computer Application (BCA)</strong> | St. Peter's Institute (Aug 2023 – May 2026) | CGPA: 6.7 / 10<br/>
+        <strong>Higher Secondary Certificate (12th Grade)</strong> | Rural Institute of Open Schooling (May 2023) | Percentage: 62.5%</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function setSimScreen(num) {
+      document.getElementById('screen-1').classList.add('hidden');
+      document.getElementById('screen-2').classList.add('hidden');
+      document.getElementById('screen-3').classList.add('hidden');
+      document.getElementById('screen-' + num).classList.remove('hidden');
+
+      ['sim-btn-1', 'sim-btn-2', 'sim-btn-3'].forEach((id, idx) => {
+        const btn = document.getElementById(id);
+        if (idx + 1 === num) {
+          btn.className = "w-full text-left p-4 rounded-2xl border border-purple-500/50 bg-purple-950/40 flex items-start gap-3.5";
+        } else {
+          btn.className = "w-full text-left p-4 rounded-2xl border border-white/5 bg-white/[0.02] flex items-start gap-3.5";
+        }
+      });
+      lucide.createIcons();
+    }
+
+    function openCaseStudyModal() {
+      document.getElementById('case-study-modal').classList.remove('hidden');
+    }
+    function closeCaseStudyModal() {
+      document.getElementById('case-study-modal').classList.add('hidden');
+    }
+
+    function openResumeModal() {
+      document.getElementById('resume-modal').classList.remove('hidden');
+    }
+    function closeResumeModal() {
+      document.getElementById('resume-modal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

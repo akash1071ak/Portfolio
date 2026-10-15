@@ -1,0 +1,15 @@
+{
+  "short_name": "Akash UI/UX",
+  "name": "Akash G | UI/UX Designer Portfolio",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B0F19",
+  "theme_color": "#7C3AED",
+  "display": "standalone"
+}
